@@ -1,4 +1,4 @@
-package com.example.dawn.caloriecal.com.example.dawn.caloriecal.database;
+package com.example.dawn.caloriecal.database;
 
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
