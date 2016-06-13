@@ -1,10 +1,15 @@
 package com.example.dawn.caloriecal;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.dawn.caloriecal.database.DatabaseFetchActivity;
@@ -34,6 +39,44 @@ public class MainActivity extends AppCompatActivity {
         textViewName.setText(name);
         textViewConsumedCalories.setText(caloriesConsumed);
         textViewTotalCalories.setText(totalCalories);
+
+
+        ListView list = (ListView) findViewById(R.id.content_breakfast_drawer);
+
+        //Getting Strings to set In Navigation Drawer List
+        String[] array=getResources().getStringArray(R.array.navigation_drawer);
+
+        //Set the Navigation List
+        ArrayAdapter<String> adapterNav = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, array);
+        list.setAdapter(adapterNav);
+
+
+        //If an Item is clicked inside the NavigationListView
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                //Position Related Data
+                if(position==1)
+                {
+                    Intent intent = new Intent(MainActivity.this,MainActivity.class);
+                    startActivity(intent);
+                }
+                if(position==2)
+                {
+                    Intent intent = new Intent(MainActivity.this,CuisineItemsActivity.class);
+                    startActivity(intent);
+                }
+                if(position==3)
+                {
+                    Intent intent = new Intent(MainActivity.this,FoodItemsActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
 
