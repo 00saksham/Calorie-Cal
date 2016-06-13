@@ -47,7 +47,7 @@ public class DatabaseFetchActivity extends AppCompatActivity
 
     public Cursor getFoodItems(SQLiteDatabase sqLiteDatabase)
     {
-        Cursor cursor = sqLiteDatabase.rawQuery("select name,calories from foodies;",null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select name,calories from foodie;",null);
         return cursor;
     }
 }
