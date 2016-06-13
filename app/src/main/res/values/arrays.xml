@@ -52,7 +52,7 @@
     <string-array name="navigation_drawer">
         <item>Home</item>
         <item>Cuisines</item>
-        <item>Add Food Items</item>
+        <item>Add Food</item>
     </string-array>
 
 </resources>

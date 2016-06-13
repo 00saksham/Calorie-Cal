@@ -1,11 +1,19 @@
 package com.example.dawn.caloriecal;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
+
+import com.example.dawn.caloriecal.database.DatabaseFetchActivity;
 
 public class CuisineItemsActivity extends AppCompatActivity {
 
@@ -13,8 +21,54 @@ public class CuisineItemsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuisine_items);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("CaloriesCal",MODE_PRIVATE,null);
+        DatabaseFetchActivity databaseFetchActivity = new DatabaseFetchActivity();
+
+        Cursor cursor = databaseFetchActivity.getFoodItems(sqLiteDatabase);
+
+        String colName1="cuisine_name";
+
+        String[] from = new String[]{colName1};
+        int[] to = new int[] {R.id.cuisine_list_card_text};
+
+        SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,R.layout.cuisine_list_card,cursor,from,to,0);
+        ListView list1 = (ListView) findViewById(R.id.content_cuisine_items_list);
+        list1.setAdapter(adapter);
+
+
+        ListView list = (ListView) findViewById(R.id.content_breakfast_drawer);
+
+        //Getting Strings to set In Navigation Drawer List
+        String[] array=getResources().getStringArray(R.array.navigation_drawer);
+
+        //Set the Navigation List
+        ArrayAdapter<String> adapterNav = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, array);
+        list.setAdapter(adapterNav);
+
+
+        //If an Item is clicked inside the NavigationListView
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                //Position Related Data
+                if(position==1)
+                {
+                    Intent intent = new Intent(CuisineItemsActivity.this,MainActivity.class);
+                    startActivity(intent);
+                }
+                if(position==3)
+                {
+                    Intent intent = new Intent(CuisineItemsActivity.this,FoodItemsActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
