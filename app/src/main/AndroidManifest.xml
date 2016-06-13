@@ -44,6 +44,10 @@
         <activity
             android:name=".AddFoodItemsActivity"
             android:label="@string/title_activity_add_food_items"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddCuisineActivity"
+            android:label="@string/title_activity_add_cuisine"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
