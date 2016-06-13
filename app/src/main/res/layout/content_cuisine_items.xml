@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.dawn.caloriecal.FoodItemsActivity"
+    tools:showIn="@layout/activity_cuisine_items">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="24dp">
+
+        <TextView
+            android:layout_marginLeft="16dp"
+            android:id="@+id/content_cuisine_items_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cuisine Lists"
+            android:textSize="30sp" />
+
+        <ListView
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/content_cuisine_items_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/content_cuisine_items_text">
+
+        </ListView>
+    </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>
