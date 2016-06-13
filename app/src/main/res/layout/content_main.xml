@@ -108,6 +108,7 @@
 
 
                 <android.support.v7.widget.CardView
+                    android:onClick="breakfastIntent"
                     android:id="@+id/content_main_breakfast_card"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
@@ -126,6 +127,7 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
+                    android:onClick="lunchIntent"
                     android:id="@+id/content_main_lunch_card"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
@@ -145,6 +147,7 @@
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
+                    android:onClick="dinnerIntent"
                     android:id="@+id/content_main_dinner_card"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
