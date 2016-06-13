@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
+import android.widget.EditText;
 
 import com.example.dawn.caloriecal.database.DatabaseInitialize;
 
@@ -20,8 +20,6 @@ public class IntroActivity extends AppCompatActivity {
 
         //Check to see if Database present or not
         if (doesDatabaseExist(this) == false) {
-            getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-            getSupportActionBar().hide();
             setContentView(R.layout.activity_intro);
         } else {
             //Calling Overview Activity
@@ -34,14 +32,16 @@ public class IntroActivity extends AppCompatActivity {
 
     public void initializeMethod(View view)
     {
-
-
-
-
         //Open Database
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("CalorieCal", MODE_PRIVATE, null);
 
         DatabaseInitialize databaseInitialize = new DatabaseInitialize(); //New Java Class
+
+        EditText text1 = (EditText) findViewById(R.id.activity_intro_your_name);
+        EditText text2 = (EditText) findViewById(R.id.activity_intro_preferred_calories);
+
+        String name = text1.getText().toString();
+        int totalCalories = Integer.parseInt(text2.getText().toString());
 
         String[] cuisine = getResources().getStringArray(R.array.cuisine_name);
         String[] foodItems = getResources().getStringArray(R.array.food_items);
@@ -52,6 +52,7 @@ public class IntroActivity extends AppCompatActivity {
 
         databaseInitialize.cuisineNameInitialize(sqLiteDatabase, cuisine);
         databaseInitialize.foodInitialize(sqLiteDatabase, cuisine, foodItems, calories);
+        databaseInitialize.individualInitialize(sqLiteDatabase,name,totalCalories);
 
         //Call Home Activity
         Intent intent = new Intent(this, MainActivity.class);
