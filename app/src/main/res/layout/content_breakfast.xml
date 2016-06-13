@@ -26,4 +26,11 @@
 
         </ListView>
     </RelativeLayout>
+    <ListView
+        android:id="@+id/content_breakfast_drawer"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left|start">
+
+    </ListView>
 </android.support.v4.widget.DrawerLayout>
