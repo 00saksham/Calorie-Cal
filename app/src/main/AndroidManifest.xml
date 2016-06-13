@@ -20,9 +20,23 @@
         </activity>
         <activity
             android:name=".IntroActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddMealActivity"
+            android:label="@string/title_activity_add_meal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LunchActivity"
+            android:label="@string/title_activity_lunch"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DinnerActivity"
+            android:label="@string/title_activity_dinner"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FoodItemsActivity"
+            android:label="@string/title_activity_food_items"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

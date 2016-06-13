@@ -12,15 +12,13 @@ import android.widget.SimpleCursorAdapter;
 
 import com.example.dawn.caloriecal.database.DatabaseFetchActivity;
 
-public class BreakfastActivity extends AppCompatActivity {
+public class LunchActivity extends AppCompatActivity {
 
-    private String meal="Breakfast";
-
+    private String meal="Lunch";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_breakfast);
-
+        setContentView(R.layout.activity_lunch);
 
         SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("CalorieCal",MODE_PRIVATE,null);
         DatabaseFetchActivity databaseFetchActivity = new DatabaseFetchActivity();
@@ -34,7 +32,7 @@ public class BreakfastActivity extends AppCompatActivity {
         int[] to = new int[] {R.id.food_items_list_card_food_name,R.id.food_items_list_card_food_calorie};
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,R.layout.food_items_list_card,cursor,from,to,0);
-        ListView list1 = (ListView) findViewById(R.id.content_breakfast_list);
+        ListView list1 = (ListView) findViewById(R.id.content_lunch_list);
         list1.setAdapter(adapter);
 
 
@@ -43,8 +41,6 @@ public class BreakfastActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
