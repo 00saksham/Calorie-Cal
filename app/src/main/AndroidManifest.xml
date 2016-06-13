@@ -40,6 +40,10 @@
         <activity
             android:name=".CuisineItemsActivity"
             android:label="@string/title_activity_cuisine_items"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddFoodItemsActivity"
+            android:label="@string/title_activity_add_food_items"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
