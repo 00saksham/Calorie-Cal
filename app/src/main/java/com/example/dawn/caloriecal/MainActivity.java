@@ -41,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         textViewTotalCalories.setText(totalCalories);
 
 
+        /*CardView cardView1 = (CardView) findViewById(R.id.content_breakfast_card);
+        CardView cardView2 = (CardView) findViewById(R.id.content_lunch_card);
+        CardView cardView3 = (CardView) findViewById(R.id.content_dinner_card);*/
+
+
         ListView list = (ListView) findViewById(R.id.content_breakfast_drawer);
 
         //Getting Strings to set In Navigation Drawer List
@@ -101,4 +106,24 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    public void breakfastIntent(View view)
+    {
+        Intent intent = new Intent(this,BreakfastActivity.class);
+        startActivity(intent);
+    }
+
+    public void lunchIntent(View view)
+    {
+        Intent intent = new Intent(this,LunchActivity.class);
+        startActivity(intent);
+    }
+
+    public void dinnerIntent(View view)
+    {
+        Intent intent = new Intent(this,DinnerActivity.class);
+        startActivity(intent);
+    }
+
 }
