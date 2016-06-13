@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cuisine_name">
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+        <item>Snanks</item>
+    </string-array>
+
+    <string-array name="food_items">
+        <item>Rajma Chawal</item>
+        <item>Shahi Paneer</item>
+        <item>Kadahi Paneer</item>
+        <item>Musroom Matar</item>
+        <item>Kadhi</item>
+        <item>Aloo Kachori</item>
+        <item>Dal</item>
+        <item>Pesto Pasta</item>
+        <item>Linguine</item>
+        <item>Marghareta Pizza</item>
+        <item>Churos</item>
+        <item>Fried Rice</item>
+        <item>Noodles</item>
+        <item>Dumplings</item>
+        <item>French Toast</item>
+        <item>Omellete</item>
+        <item>Fruit Juice</item>
+        <item>Oats</item>
+    </string-array>
+
+    <integer-array name="Calories">
+        <item>350</item>
+        <item>300</item>
+        <item>270</item>
+        <item>250</item>
+        <item>300</item>
+        <item>370</item>
+        <item>280</item>
+        <item>360</item>
+        <item>450</item>
+        <item>410</item>
+        <item>210</item>
+        <item>380</item>
+        <item>400</item>
+        <item>420</item>
+        <item>320</item>
+        <item>300</item>
+        <item>200</item>
+        <item>250</item>
+    </integer-array>
+
+</resources>
