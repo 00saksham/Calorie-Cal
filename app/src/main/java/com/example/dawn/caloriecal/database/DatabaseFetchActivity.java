@@ -15,9 +15,9 @@ public class DatabaseFetchActivity extends AppCompatActivity
         return cursor;
     }
 
-    public Cursor getBreakfastItems(SQLiteDatabase sqLiteDatabase,String meal_time)
+    public Cursor getMealItems(SQLiteDatabase sqLiteDatabase,String meal_time)
     {
-        Cursor cursor = sqLiteDatabase.rawQuery("select name,cuisine,calorie from meals WHERE meal_time='"+meal_time+"';",null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select name,calorie from meals WHERE meal_time='"+meal_time+"';",null);
         return cursor;
     }
 

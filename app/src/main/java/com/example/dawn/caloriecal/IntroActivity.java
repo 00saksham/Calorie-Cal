@@ -34,7 +34,7 @@ public class IntroActivity extends AppCompatActivity {
 
     public void initializeMethod(View view)
     {
-        
+
 
 
 

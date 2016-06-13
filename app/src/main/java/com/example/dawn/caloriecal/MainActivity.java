@@ -1,32 +1,40 @@
 package com.example.dawn.caloriecal;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.TextView;
+
+import com.example.dawn.caloriecal.database.DatabaseFetchActivity;
 
 public class MainActivity extends AppCompatActivity {
+
+    private String name;
+    private String totalCalories;
+    private String caloriesConsumed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
         setContentView(R.layout.activity_main);
 
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("CalorieCal",MODE_PRIVATE,null);
+        DatabaseFetchActivity databaseFetchActivity = new DatabaseFetchActivity();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        name = databaseFetchActivity.getUserName(sqLiteDatabase);
+        totalCalories = Integer.toString(databaseFetchActivity.getUserTotalCalories(sqLiteDatabase));
+        caloriesConsumed = Integer.toString(databaseFetchActivity.getConsumedCalories(sqLiteDatabase));
+
+        TextView textViewName = (TextView) findViewById(R.id.content_main_name_text);
+        TextView textViewTotalCalories = (TextView) findViewById(R.id.content_main_total_calories_number);
+        TextView textViewConsumedCalories = (TextView) findViewById(R.id.content_main_calories_taken_number);
+
+        textViewName.setText(name);
+        textViewConsumedCalories.setText(caloriesConsumed);
+        textViewTotalCalories.setText(totalCalories);
+
     }
 
     @Override
