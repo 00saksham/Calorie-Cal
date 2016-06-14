@@ -4,7 +4,28 @@
         <item>Indian</item>
         <item>Italian</item>
         <item>Chinese</item>
-        <item>Snanks</item>
+        <item>Snacks</item>
+    </string-array>
+
+    <string-array name="cuisine_list">
+        <item>Indian</item>
+        <item>Indian</item>
+        <item>Indian</item>
+        <item>Indian</item>
+        <item>Indian</item>
+        <item>Indian</item>
+        <item>Indian</item>
+        <item>Italian</item>
+        <item>Italian</item>
+        <item>Italian</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+        <item>Chinese</item>
+        <item>Chinese</item>
+        <item>Snacks</item>
+        <item>Chinese</item>
+        <item>Chinese</item>
+        <item>Chinese</item>
     </string-array>
 
     <string-array name="food_items">

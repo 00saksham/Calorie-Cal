@@ -22,7 +22,8 @@
             android:layout_below="@id/content_breakfast_card"
             android:id="@+id/content_breakfast_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:drawSelectorOnTop="false">
 
         </ListView>
     </RelativeLayout>
@@ -30,7 +31,8 @@
         android:id="@+id/content_breakfast_drawer"
         android:layout_width="260dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left|start">
+        android:layout_gravity="left|start"
+        android:background="#ffeeeeee">
 
     </ListView>
 </android.support.v4.widget.DrawerLayout>

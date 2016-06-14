@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,10 +21,10 @@ public class CuisineItemsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cuisine_items);
 
-        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("CaloriesCal",MODE_PRIVATE,null);
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("CalorieCal",MODE_PRIVATE,null);
         DatabaseFetchActivity databaseFetchActivity = new DatabaseFetchActivity();
 
-        Cursor cursor = databaseFetchActivity.getFoodItems(sqLiteDatabase);
+        Cursor cursor = databaseFetchActivity.getCuisine(sqLiteDatabase);
 
         String colName1="cuisine_name";
 
@@ -37,7 +36,7 @@ public class CuisineItemsActivity extends AppCompatActivity {
         list1.setAdapter(adapter);
 
 
-        ListView list = (ListView) findViewById(R.id.content_breakfast_drawer);
+        ListView list = (ListView) findViewById(R.id.content_cuisine_items_drawer);
 
         //Getting Strings to set In Navigation Drawer List
         String[] array=getResources().getStringArray(R.array.navigation_drawer);
@@ -56,12 +55,12 @@ public class CuisineItemsActivity extends AppCompatActivity {
 
 
                 //Position Related Data
-                if(position==1)
+                if(position==0)
                 {
                     Intent intent = new Intent(CuisineItemsActivity.this,MainActivity.class);
                     startActivity(intent);
                 }
-                if(position==3)
+                if(position==2)
                 {
                     Intent intent = new Intent(CuisineItemsActivity.this,FoodItemsActivity.class);
                     startActivity(intent);
@@ -74,8 +73,10 @@ public class CuisineItemsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                Intent intent = new Intent(CuisineItemsActivity.this,AddCuisineActivity.class);
+                startActivity(intent);
+
             }
         });
     }

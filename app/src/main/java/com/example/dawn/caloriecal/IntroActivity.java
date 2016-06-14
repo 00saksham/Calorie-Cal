@@ -44,6 +44,7 @@ public class IntroActivity extends AppCompatActivity {
         int totalCalories = Integer.parseInt(text2.getText().toString());
 
         String[] cuisine = getResources().getStringArray(R.array.cuisine_name);
+        String[] cuisine_list = getResources().getStringArray(R.array.cuisine_list);
         String[] foodItems = getResources().getStringArray(R.array.food_items);
         int[] calories = getResources().getIntArray(R.array.Calories);
 
@@ -51,7 +52,7 @@ public class IntroActivity extends AppCompatActivity {
         databaseInitialize.databaseCreation(sqLiteDatabase);
 
         databaseInitialize.cuisineNameInitialize(sqLiteDatabase, cuisine);
-        databaseInitialize.foodInitialize(sqLiteDatabase, cuisine, foodItems, calories);
+        databaseInitialize.foodInitialize(sqLiteDatabase, cuisine_list, foodItems, calories);
         databaseInitialize.individualInitialize(sqLiteDatabase,name,totalCalories);
 
         //Call Home Activity
@@ -65,3 +66,4 @@ public class IntroActivity extends AppCompatActivity {
         return dbFile.exists();
     }
 }
+

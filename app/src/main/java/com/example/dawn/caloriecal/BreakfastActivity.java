@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,7 +30,7 @@ public class BreakfastActivity extends AppCompatActivity {
         Cursor cursor = databaseFetchActivity.getMealItems(sqLiteDatabase,meal);
 
         String colName1="name";
-        String colName2="calorie";
+        String colName2="calories";
 
         String[] from = new String[]{colName1,colName2};
         int[] to = new int[] {R.id.food_items_list_card_food_name,R.id.food_items_list_card_food_calorie};
@@ -60,17 +59,17 @@ public class BreakfastActivity extends AppCompatActivity {
 
 
                 //Position Related Data
-                if(position==1)
+                if(position==0)
                 {
                     Intent intent = new Intent(BreakfastActivity.this,MainActivity.class);
                     startActivity(intent);
                 }
-                if(position==2)
+                if(position==1)
                 {
                     Intent intent = new Intent(BreakfastActivity.this,CuisineItemsActivity.class);
                     startActivity(intent);
                 }
-                if(position==3)
+                if(position==2)
                 {
                     Intent intent = new Intent(BreakfastActivity.this,FoodItemsActivity.class);
                     startActivity(intent);
@@ -85,8 +84,8 @@ public class BreakfastActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(BreakfastActivity.this,AddMealActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         CardView cardView3 = (CardView) findViewById(R.id.content_dinner_card);*/
 
 
-        ListView list = (ListView) findViewById(R.id.content_breakfast_drawer);
+        ListView list = (ListView) findViewById(R.id.content_main_home_drawer);
 
         //Getting Strings to set In Navigation Drawer List
         String[] array=getResources().getStringArray(R.array.navigation_drawer);
@@ -65,17 +65,17 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //Position Related Data
-                if(position==1)
+                if(position==0)
                 {
                     Intent intent = new Intent(MainActivity.this,MainActivity.class);
                     startActivity(intent);
                 }
-                if(position==2)
+                if(position==1)
                 {
                     Intent intent = new Intent(MainActivity.this,CuisineItemsActivity.class);
                     startActivity(intent);
                 }
-                if(position==3)
+                if(position==2)
                 {
                     Intent intent = new Intent(MainActivity.this,FoodItemsActivity.class);
                     startActivity(intent);

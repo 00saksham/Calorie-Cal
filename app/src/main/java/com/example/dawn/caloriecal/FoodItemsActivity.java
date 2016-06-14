@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,7 +22,7 @@ public class FoodItemsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_food_items);
 
 
-        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("CaloriesCal",MODE_PRIVATE,null);
+        SQLiteDatabase sqLiteDatabase = openOrCreateDatabase("CalorieCal",MODE_PRIVATE,null);
         DatabaseFetchActivity databaseFetchActivity = new DatabaseFetchActivity();
 
         Cursor cursor = databaseFetchActivity.getFoodItems(sqLiteDatabase);
@@ -35,11 +34,11 @@ public class FoodItemsActivity extends AppCompatActivity {
         int[] to = new int[] {R.id.food_list_name,R.id.food_list_calories};
 
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,R.layout.food_list,cursor,from,to,0);
-        ListView list1 = (ListView) findViewById(R.id.content_breakfast_list);
+        ListView list1 = (ListView) findViewById(R.id.content_food_items_list);
         list1.setAdapter(adapter);
 
 
-        ListView list = (ListView) findViewById(R.id.content_breakfast_drawer);
+        ListView list = (ListView) findViewById(R.id.content_content_food_items_drawer);
 
         //Getting Strings to set In Navigation Drawer List
         String[] array=getResources().getStringArray(R.array.navigation_drawer);
@@ -58,17 +57,17 @@ public class FoodItemsActivity extends AppCompatActivity {
 
 
                 //Position Related Data
-                if(position==1)
+                if(position==0)
                 {
                     Intent intent = new Intent(FoodItemsActivity.this,MainActivity.class);
                     startActivity(intent);
                 }
-                if(position==2)
+                if(position==1)
                 {
                     Intent intent = new Intent(FoodItemsActivity.this,CuisineItemsActivity.class);
                     startActivity(intent);
                 }
-                if(position==3)
+                if(position==2)
                 {
                     Intent intent = new Intent(FoodItemsActivity.this,FoodItemsActivity.class);
                     startActivity(intent);
@@ -79,8 +78,9 @@ public class FoodItemsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+
+                Intent intent = new Intent(FoodItemsActivity.this,AddFoodItemsActivity.class);
+                startActivity(intent);
             }
         });
     }
