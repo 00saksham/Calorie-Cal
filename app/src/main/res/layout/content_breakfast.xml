@@ -15,24 +15,41 @@
         <android.support.v7.widget.CardView
             android:id="@+id/content_breakfast_card"
             android:layout_width="match_parent"
-            android:layout_height="150dp">
-             </android.support.v7.widget.CardView>
+            android:layout_height="150dp"
+            android:background="@android:color/holo_orange_light"
+            android:backgroundTint="@android:color/holo_orange_light"
+            android:elevation="100dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/breakfast" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:elevation="90dp"
+                android:text="BREAKFAST"
+                android:textColor="#ffffff"
+                android:textSize="34sp" />
+        </android.support.v7.widget.CardView>
 
         <ListView
-            android:layout_below="@id/content_breakfast_card"
             android:id="@+id/content_breakfast_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawSelectorOnTop="false">
+            android:layout_below="@id/content_breakfast_card">
 
         </ListView>
     </RelativeLayout>
+
     <ListView
         android:id="@+id/content_breakfast_drawer"
         android:layout_width="260dp"
         android:layout_height="match_parent"
-        android:layout_gravity="left|start"
-        android:background="#ffeeeeee">
+        android:layout_gravity="left|start">
 
     </ListView>
 </android.support.v4.widget.DrawerLayout>

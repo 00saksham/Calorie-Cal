@@ -16,11 +16,15 @@
         <android.support.v7.widget.CardView
             android:id="@+id/content_main_name_card"
             android:layout_width="match_parent"
-            android:layout_height="300dp">
+
+            android:layout_height="300dp"
+            android:elevation="150dp">
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/name">
 
                 <TextView
                     android:id="@+id/content_main_name_text"
@@ -30,7 +34,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="100dp"
+                    android:elevation="175dp"
                     android:text="NAME"
+                    android:textColor="#ffffff"
+
                     android:textSize="34sp" />
 
                 <RelativeLayout
@@ -43,7 +50,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
+                        android:elevation="50dp"
                         android:text="Total calories"
+                        android:textColor="#FFffff"
+
                         android:textSize="20sp" />
 
 
@@ -55,7 +65,9 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="20dp"
                         android:layout_marginLeft="20dp"
+                        android:elevation="50dp"
                         android:text="0"
+                        android:textColor="#FFffff"
                         android:textSize="24sp" />
 
 
@@ -73,7 +85,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="20dp"
+                        android:elevation="50dp"
                         android:text="Calories taken"
+                        android:textColor="#FFffff"
                         android:textSize="20sp" />
 
 
@@ -85,8 +99,10 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="20dp"
                         android:layout_marginLeft="20dp"
+                        android:elevation="50dp"
                         android:gravity="center"
                         android:text="0"
+                        android:textColor="#FFffff"
 
                         android:textSize="24sp" />
 
@@ -108,59 +124,89 @@
 
 
                 <android.support.v7.widget.CardView
-                    android:onClick="breakfastIntent"
                     android:id="@+id/content_main_breakfast_card"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/holo_orange_light"
+                    android:backgroundTint="@android:color/holo_orange_dark"
+                    android:elevation="150dp"
+                    android:onClick="breakfastIntent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/breakfast" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="24dp"
+                        android:layout_gravity="center"
+                        android:elevation="130dp"
                         android:text="BREAKFAST"
-                        android:textSize="34sp"
+                        android:textColor="#ffffff"
 
-                        />
+                        android:textSize="34sp" />
 
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:onClick="lunchIntent"
                     android:id="@+id/content_main_lunch_card"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_below="@id/content_main_breakfast_card"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/holo_green_dark"
+                    android:backgroundTint="@android:color/holo_green_dark"
+                    android:elevation="150dp"
+                    android:onClick="lunchIntent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/lunch" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="24dp"
-                        android:text="LUNCH"
-                        android:textSize="34sp"
+                        android:layout_gravity="center"
 
-                        />
+                        android:elevation="130dp"
+                        android:text="LUNCH"
+                        android:textColor="#ffffff"
+                        android:textSize="34sp" />
 
                 </android.support.v7.widget.CardView>
 
                 <android.support.v7.widget.CardView
-                    android:onClick="dinnerIntent"
                     android:id="@+id/content_main_dinner_card"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_below="@id/content_main_lunch_card"
-                    android:layout_marginTop="8dp">
+                    android:layout_marginTop="8dp"
+                    android:background="@android:color/holo_purple"
+                    android:backgroundTint="@android:color/holo_purple"
+                    android:elevation="150dp"
+                    android:onClick="dinnerIntent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/dinner" />
 
                     <TextView
                         android:layout_width="wrap_content"
+
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="24dp"
+                        android:layout_gravity="center"
+                        android:elevation="130dp"
                         android:text="DINNER"
+                        android:textColor="#ffffff"
                         android:textSize="34sp"
+
 
                         />
 
