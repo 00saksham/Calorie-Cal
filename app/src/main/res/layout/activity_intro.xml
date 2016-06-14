@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.example.dawn.caloriecal.IntroActivity">
+    tools:context="com.example.dawn.caloriecal.IntroActivity"
+    android:background="#208a18">
+    >
 
     <TextView
         android:id="@+id/activity_intro_get_started"
@@ -13,7 +15,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:text="Let's get started.."
-        android:textSize="34sp" />
+        android:textSize="34sp"
+        android:textColor="#FFC107"
+
+        />
+
 
     <EditText
         android:id="@+id/activity_intro_your_name"
@@ -22,7 +28,7 @@
         android:layout_below="@id/activity_intro_get_started"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="175dp"
         android:hint="Your name"
         android:textSize="24sp"
 
@@ -48,5 +54,7 @@
         android:layout_marginBottom="50dp"
         android:text="START"
         android:onClick="initializeMethod"
+        android:background="#FFC107"
+        android:elevation="75dp"
         />
 </RelativeLayout>

@@ -18,7 +18,7 @@
             android:id="@+id/content_cuisine_items_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cuisine Lists"
+            android:text="List of Cuisines"
             android:textSize="30sp" />
 
         <ListView
